@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class WallSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject HighWall;
-    [SerializeField] GameObject ShortWall;
-    [SerializeField] GameObject WallWithExit;
-    [SerializeField] GameObject Coin;
+    [SerializeField] GameObject WallWood;
+    [SerializeField] GameObject WallGold;
+    [SerializeField] GameObject WallMetal;
     [SerializeField] float timer = 2;
     [SerializeField] List<GameObject> WallsAndCoins = new List<GameObject>();
     [SerializeField] Transform SpawnerRight;
@@ -31,39 +30,34 @@ public class WallSpawner : MonoBehaviour
         int randomNumber = Random.Range(0, 4);
         if (randomNumber == 0)
         {
-            if (WallsAndCoins.Contains(Coin))
-            {
-                return;
-            }
-            Instantiate(Coin, spawnPosition);
-            WallsAndCoins.Add(Coin);
+            
         }
         if (randomNumber == 1)
         {
-            if (WallsAndCoins.Contains(HighWall))
+            if (WallsAndCoins.Contains(WallWood))
             {
                 return;
             }
-            Instantiate(HighWall, spawnPosition);
-            WallsAndCoins.Add(HighWall);
+            Instantiate(WallWood, spawnPosition);
+            WallsAndCoins.Add(WallWood);
         }
         if (randomNumber == 2)
         {
-            if (WallsAndCoins.Contains(ShortWall))
+            if (WallsAndCoins.Contains(WallGold))
             {
                 return;
             }
-            Instantiate(ShortWall, spawnPosition);
-            WallsAndCoins.Add(ShortWall);
+            Instantiate(WallGold, spawnPosition);
+            WallsAndCoins.Add(WallGold);
         }
         if (randomNumber == 3)
         {
-            if (WallsAndCoins.Contains(WallWithExit))
+            if (WallsAndCoins.Contains(WallMetal))
             {
                 return;
             }
-            Instantiate(WallWithExit, spawnPosition);
-            WallsAndCoins.Add(WallWithExit);
+            Instantiate(WallMetal, spawnPosition);
+            WallsAndCoins.Add(WallMetal);
         }
     }
 }
