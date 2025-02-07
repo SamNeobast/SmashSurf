@@ -2,17 +2,9 @@ using UnityEngine;
 
 public class RoadMove : MonoBehaviour
 {
-    [SerializeField] private float timer = 0.51f;
-    [SerializeField] private float timerMax = 0.5f;
-
-    void Update()
+    [SerializeField] private float speed = 10f;
+    private void FixedUpdate()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            gameObject.transform.position += new Vector3(0,0,-0.5f);
-            timer = timerMax;
-        }
-
+        gameObject.transform.position += Vector3.back * speed * Time.deltaTime;
     }
 }
