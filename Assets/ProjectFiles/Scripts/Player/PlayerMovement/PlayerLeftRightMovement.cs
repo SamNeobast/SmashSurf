@@ -15,7 +15,7 @@ public class PlayerLeftRightMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (gameObject.transform.position.x >= 0)
+            if (gameObject.transform.position.x >= -2)
             {
                 gameObject.transform.position += new Vector3(-3, 0, 0);
             }
