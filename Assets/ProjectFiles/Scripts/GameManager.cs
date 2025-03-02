@@ -23,4 +23,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         PauseWindow.SetActive(false);
     }
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+        Time.timeScale = 1f;
+    }
 }
