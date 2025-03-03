@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac20bf4a1839ba848a262e6a011be306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseWindow: {fileID: 0}
+  PauseWindow: {fileID: 588056276}
 --- !u!4 &863816509
 Transform:
   m_ObjectHideFlags: 0
