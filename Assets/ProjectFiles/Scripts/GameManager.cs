@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour
             PauseWindow.SetActive(true);
         }
     }
-    public void RestartScreen()
+    public void RestartButton()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void ContinueScreen()
+    public void ContinueButton()
     {
         Time.timeScale = 1f;
         PauseWindow.SetActive(false);
