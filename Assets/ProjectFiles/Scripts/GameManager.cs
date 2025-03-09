@@ -3,14 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject LoseWindow;
     [SerializeField] GameObject PauseWindow;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (LoseWindow == false)
         {
-            Time.timeScale = 0;
-            PauseWindow.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 0;
+                PauseWindow.SetActive(true);
+            }
         }
     }
     public void RestartButton()

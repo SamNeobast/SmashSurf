@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4493221529096243452}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac6aaf62e485354eab9831586921834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseWindow: {fileID: 0}
   speed: 7
 --- !u!54 &-7278458169466138318
 Rigidbody:
