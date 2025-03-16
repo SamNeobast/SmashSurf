@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (LoseWindow == false)
+        if (LoseWindow.activeSelf == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
