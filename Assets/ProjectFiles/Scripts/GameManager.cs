@@ -8,9 +8,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (LoseWindow.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (LoseWindow.activeSelf == true)
+            {
+                PauseWindow.SetActive(false);
+                Debug.Log("You lost restart the game");
+            }
+            if (LoseWindow.activeSelf == false)
             {
                 Time.timeScale = 0;
                 PauseWindow.SetActive(true);
