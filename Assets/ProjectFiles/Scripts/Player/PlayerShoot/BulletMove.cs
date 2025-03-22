@@ -4,17 +4,19 @@ public class BulletMove : MonoBehaviour
 {
     private GunCursorRotate gunTarget;
     private Vector3 targetPosition;
-    private int speed = 3;
+    private int speed = 10;
+    private Rigidbody rb;
     private void Start()
     {
-        gunTarget = FindObjectOfType<GunCursorRotate>();
+        rb = GetComponent<Rigidbody>();
+        gunTarget = FindAnyObjectByType<GunCursorRotate>();
         targetPosition = gunTarget.targetPosition;
     }
     
     private void FixedUpdate()
     {
-        Vector3 direction = (targetPosition).normalized;
-        transform.position += direction * speed * Time.deltaTime;
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
     }
     private void OnCollisionEnter(Collision collision)
     {
