@@ -4,7 +4,7 @@ public class BulletMove : MonoBehaviour
 {
     private GunCursorRotate gunTarget;
     private Vector3 targetPosition;
-    private int speed = 10;
+    private int speed = 6;
     private Rigidbody rb;
     private void Start()
     {
@@ -21,6 +21,11 @@ public class BulletMove : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<WallMove>() != null)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.GetComponent<BulletMove>() != null)
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);

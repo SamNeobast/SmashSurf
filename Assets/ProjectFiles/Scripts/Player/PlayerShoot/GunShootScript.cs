@@ -5,13 +5,22 @@ public class GunShootScript : GunCursorRotate
 {
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Transform bulletSpawnPoint;
-
+    private float timer = 0.6f;
     private Vector3 pointToMove;
     private void Update()
     {
+        timer -= Time.deltaTime;
+        
         if (Input.GetMouseButtonDown(0))
-        {Shoot();}
+        {
+            if (timer <= 0)
+            {
+                Shoot();
+                timer = 0.6f;
+            }
+        }
     }
+            
 
     private void Shoot()
     {
