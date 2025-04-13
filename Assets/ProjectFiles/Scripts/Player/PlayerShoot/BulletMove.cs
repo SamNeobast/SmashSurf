@@ -11,7 +11,7 @@ public class BulletMove : MonoBehaviour
 
     private void Start()
     {
-        scoreManager = FindObjectOfType<ScoreManager>();
+        scoreManager = FindAnyObjectByType<ScoreManager>();
         rb = GetComponent<Rigidbody>();
         gunTarget = FindAnyObjectByType<GunCursorRotate>();
 

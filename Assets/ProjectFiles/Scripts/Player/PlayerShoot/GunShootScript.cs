@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GunShootScript : GunCursorRotate
 {
+    [SerializeField] AudioSource ShootSound;
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Transform bulletSpawnPoint;
     private float timer = 0.6f;
@@ -16,6 +17,7 @@ public class GunShootScript : GunCursorRotate
             if (timer <= 0)
             {
                 Shoot();
+                ShootSound.Play();
                 timer = 0.6f;
             }
         }
